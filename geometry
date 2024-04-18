@@ -1,0 +1,49 @@
+import turtle
+
+# Function to draw a rectangle
+def draw_rectangle(t, width, height):
+    for _ in range(2):
+        t.forward(width)
+        t.left(90)
+        t.forward(height)
+        t.left(90)
+
+# Function to calculate area of a rectangle
+def calculate_area(width, height):
+    return width * height
+
+# Initialize turtle
+t = turtle.Turtle()
+t.speed(1)
+
+# Draw the rectangle
+rectangle_width = 100
+rectangle_height = 50
+draw_rectangle(t, rectangle_width, rectangle_height)
+
+# Calculate the area
+area = calculate_area(rectangle_width, rectangle_height)
+
+# Write the question
+t.penup()
+t.goto(-50, -20)
+t.pendown()
+t.write("Calculate the area of the rectangle:", font=("Arial", 12, "normal"))
+
+# Write the dimensions
+t.penup()
+t.goto(-50, -40)
+t.pendown()
+t.write("Width = {} units, Height = {} units".format(rectangle_width, rectangle_height), font=("Arial", 12, "normal"))
+
+# Write the answer
+t.penup()
+t.goto(-50, -60)
+t.pendown()
+t.write("Area = {} square units".format(area), font=("Arial", 12, "normal"))
+
+# Hide turtle
+t.hideturtle()
+
+# Keep the window open
+turtle.done()
